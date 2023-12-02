@@ -12,14 +12,9 @@ fn main() {
     let plan = parse_json_to_struct(config);
     println!("Finished parsing json to struct");
 
-    let morning_message_time = chrono::NaiveTime::from_hms_opt(8, 0, 0);
-    let evening_message_time = chrono::NaiveTime::from_hms_opt(17, 30, 0);
-    println!("Morning message time: {:?}", morning_message_time);
-    println!("Evening message time: {:?}", evening_message_time);
-
     insert_cycle_dates_into_db(&plan);
     println!("Finished inserting cycle dates into db");
-    println!("starting to run ininfinite loop until the end of the cycle is reached`");
+    println!("starting to run infinite loop until the end of the cycle is reached");
     loop {
 
         let end_date: NaiveDate = calculate_cycle_end_date(&plan);
