@@ -29,6 +29,13 @@ It more or less looks like ...
             "evening": "True",
             "daily": "True",
             "cycle_days": []
+        },
+        {
+            "med_name": "Dexamethazone",
+            "morning": true,
+            "evening": false,
+            "daily": false,
+            "cycle_days": [1,2,8,9,15,16,22,23]
         }, ...
     ]
 }
