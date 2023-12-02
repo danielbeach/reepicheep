@@ -56,6 +56,10 @@ TWILIO_ACCOUNT_SID="{}"
 TWILIO_PHONE_NUMBER="{}"
 RECIPIENT_PHONE_NUMBER="{}"
 ```
+Messages appear something like ...
+```
+Good morning! Please take your Acyclovir, Eliquis,  and Dexamethazone.
+```
 
 #### SQLite
 `Rust` works very well with `SQLite` and `reepicheep` uses `SQLite`
