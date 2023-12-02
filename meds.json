@@ -1,0 +1,58 @@
+{
+    "number_of_cycles" : 8,
+    "cycle_start_date": "2023-11-28",
+    "length_of_cycles_in_days": 28,
+    "meds": [
+        {
+            "med_name": "Acyclovir",
+            "morning": true,
+            "evening": true,
+            "daily": true,
+            "cycle_days": []
+        },
+        {
+            "med_name": "Eliquis",
+            "morning": true,
+            "evening": true,
+            "daily": true,
+            "cycle_days": []
+        },
+        {
+            "med_name": "Dexamethazone",
+            "morning": true,
+            "evening": false,
+            "daily": false,
+            "cycle_days": [1,2,8,9,15,16,22,23]
+        },
+        {
+            "med_name": "Omeprzole",
+            "morning": false,
+            "evening": true,
+            "daily": true,
+            "cycle_days": []
+        },
+        {
+            "med_name": "Revlimid",
+            "morning": false,
+            "evening": true,
+            "daily": false,
+            "cycle_days": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
+                           16,17,18,19,20,21]
+        },
+        {
+            "med_name": "Calcium",
+            "morning": true,
+            "evening": true,
+            "daily": true,
+            "cycle_days": []
+        },
+        {
+            "med_name": "Vitiam D",
+            "morning": true,
+            "evening": true,
+            "daily": true,
+            "cycle_days": []
+        }
+    ]
+
+}
