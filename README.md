@@ -1,5 +1,5 @@
 ### reepicheep
-<img src="https://github.com/danielbeach/reepicheep/blob/main/imgs/reep.png" width="30">
+<img src="https://github.com/danielbeach/reepicheep/blob/main/imgs/reep.png" width="300">
 
 This is a `Rust` based package to help with the management of
 complex medicine (pill) management cycles.
@@ -7,11 +7,11 @@ complex medicine (pill) management cycles.
 `reepicheep` notifies a person(s) via `SMS` text message using a `twillio` account.
 Many complex treatment plans for those with cancer and other problems
 require various medications taken at all various times of the day,
-and various days during long cycle periods.
+and on various days during long cycle periods.
 
 It is very challenging to manage these pills via classic 
 "pill dispensers," as even this can be challenging and
-error prone when filling the pill dispensers and its easy
+error-prone when filling the pill dispensers and it is easy
 to forget with a busy life.
 
 #### Configuration
@@ -34,10 +34,10 @@ It more or less looks like ...
 }
 ```
 
-Using `reepicheep` you can setup your cycles and
-specifcy their usages and interavls and then use
+Using `reepicheep` you can set your cycles and
+specify their usages and intervals and then use
 the `SMS` notifications to help support your 
-cycles to reduce stress and axiety about missing
+cycles to reduce stress and anxiety about missing
 or mistaking medications.
 
 `reepicheep` currently supports sending morning and
