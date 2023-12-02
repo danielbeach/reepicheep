@@ -1,5 +1,5 @@
 ### reepicheep
-<img src="https://github.com/danielbeach/reepicheep/blob/main/imgs/reep.png" width="30
+<img src="https://github.com/danielbeach/reepicheep/blob/main/imgs/reep.png" width="30">
 
 This is a `Rust` based package to help with the management of
 complex medicine (pill) management cycles.
