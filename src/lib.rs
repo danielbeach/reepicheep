@@ -196,7 +196,7 @@ pub fn check_todays_message_status(plan: &MedicationPlan) {
             update_morning_or_evening_as_sent(plan, TimeOfDay::Morning);
         }
 
-        if !status.evening_message_sent && (hour == 17 && minute >= 25) {
+        if !status.evening_message_sent && hour == 17 && minute <= 25 {
             println!("Evening message has not been sent");
             let evening_meds = gather_meds(plan, TimeOfDay::Evening);
             println!("Evening meds: {:?}", evening_meds);
