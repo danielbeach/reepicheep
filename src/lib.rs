@@ -161,7 +161,7 @@ pub fn create_sqlite_db() {
 
 pub fn check_on_todays_messages() -> Result<Vec<CyclePlan>, rusqlite::Error> {
     let conn = Connection::open("meds.db").unwrap();
-    let today = chrono::offset::Utc::now().naive_utc().date().to_string();
+    let today = chrono::offset::Utc::now().with_timezone(&Chicago).naive_utc().date().to_string();
 
     let mut stmt = conn.prepare("SELECT cycle_date, morning_message_sent, evening_message_sent FROM cycles WHERE cycle_date = ?1").unwrap();
     let cycle_plans_iter = stmt.query_map(params![today], |row| {
@@ -180,12 +180,11 @@ pub fn check_on_todays_messages() -> Result<Vec<CyclePlan>, rusqlite::Error> {
 
 pub fn check_todays_message_status(plan: &MedicationPlan) {
     let todays_status = check_on_todays_messages().unwrap();
-    let current_time = chrono::offset::Utc::now().with_timezone(&Chicago).naive_utc().time();
+    let current_time = chrono::Local::now().with_timezone(&Chicago).time();
 
     for status in todays_status {
         let hour = current_time.hour();
         let minute = current_time.minute();
-        // print the current time and the status of the morning and evening messages
         println!("Current time: {:?}. Morning message sent: {:?}. Evening message sent: {:?}.", current_time, status.morning_message_sent, status.evening_message_sent);
 
         if !status.morning_message_sent && hour == 7 && minute < 6 {
@@ -197,7 +196,7 @@ pub fn check_todays_message_status(plan: &MedicationPlan) {
             update_morning_or_evening_as_sent(plan, TimeOfDay::Morning);
         }
 
-        if !status.evening_message_sent && (hour == 17 && minute >= 25) || (hour == 18 && minute <= 1) {
+        if !status.evening_message_sent && (hour == 17 && minute >= 25) || (hour == 17 && minute <= 35) {
             println!("Evening message has not been sent");
             let evening_meds = gather_meds(plan, TimeOfDay::Evening);
             println!("Evening meds: {:?}", evening_meds);

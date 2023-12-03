@@ -26,6 +26,6 @@ fn main() {
 
         check_todays_message_status(&plan);
 
-        std::thread::sleep(std::time::Duration::from_secs(5 * 60));
+        std::thread::sleep(std::time::Duration::from_secs(60));
     }
 }
