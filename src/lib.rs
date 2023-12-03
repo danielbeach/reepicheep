@@ -2,8 +2,7 @@ use chrono::{NaiveDate, Timelike};
 use chrono_tz::America::Chicago;
 use serde::{Serialize, Deserialize};
 use rusqlite::{Connection, Result, params};
-use dotenv::dotenv;
-use reqwest::{blocking::Client, Error, StatusCode};
+use reqwest::{blocking::Client, StatusCode};
 use std::env;
 
 #[derive(Serialize, Deserialize, Debug)]
